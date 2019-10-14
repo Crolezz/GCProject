@@ -16,7 +16,7 @@ public class SubstractLives : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Stackables")
+        if (collision.tag == "Stackables" && Lives > 0)
         {
             Lives = Lives - 1;
         }
