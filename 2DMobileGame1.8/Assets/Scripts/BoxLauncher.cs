@@ -19,21 +19,25 @@ public class BoxLauncher : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        nextFire -= Time.deltaTime;
+        GameObject A = GameObject.Find("DeathTrigger");
+        SubstractLives B = A.GetComponent<SubstractLives>();
 
-        if (nextFire <= 0)
-        {
-            nextFire = fireDelay;
+            nextFire -= Time.deltaTime;
 
-            GameObject boxGO = (GameObject)Instantiate(boxPrefabs[Random.Range(0, boxPrefabs.Length)],
-                 transform.position,
-                 transform.rotation
-                        );
+            if (nextFire <= 0 && B.GameIsOver == false)
+            {
+                nextFire = fireDelay;
 
-            boxGO.GetComponent<Rigidbody2D>().velocity = transform.rotation * new Vector2(0, fireVelocity);
+                GameObject boxGO = (GameObject)Instantiate(boxPrefabs[Random.Range(0, boxPrefabs.Length)],
+                     transform.position,
+                     transform.rotation
+                            );
 
-            ScoreScript.scoreAmount++;
-        }
+                boxGO.GetComponent<Rigidbody2D>().velocity = transform.rotation * new Vector2(0, fireVelocity);
+
+                ScoreScript.scoreAmount++;
+            }
+        
 
     
 

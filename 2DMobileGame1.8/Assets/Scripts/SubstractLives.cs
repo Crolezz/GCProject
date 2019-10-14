@@ -8,6 +8,11 @@ public class SubstractLives : MonoBehaviour
     public int Lives = 3;
     public Text LivesText;
     public GameObject GameOver;
+    public GameObject PlayAgain;
+    public GameObject FinalScore;
+    public GameObject Score;
+    public Text FinalScoreText;
+    public bool GameIsOver = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,11 +24,17 @@ public class SubstractLives : MonoBehaviour
 
     void Update()
     {
+       
         LivesText.text = "Lives: " + Lives;
+        FinalScoreText.text = "Final Score: " + ScoreScript.scoreAmount;
 
         if (Lives == 0)
         {
             GameOver.SetActive(true);
+            PlayAgain.SetActive(true);
+            FinalScore.SetActive(true);
+            Score.SetActive(false);
+            GameIsOver = true;
         }
     }
 }
