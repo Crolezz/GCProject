@@ -11,7 +11,10 @@ public class MouseManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        GameObject C = GameObject.Find("DeathTrigger");               //this makes it so that you can't
+        SubstractLives D = C.GetComponent<SubstractLives>();          //grab any object when the game is over
+
+        if (Input.GetMouseButtonDown(0) && D.GameIsOver == false)    
         {
             //Clicked
             Vector3 MouseWorldPos3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);

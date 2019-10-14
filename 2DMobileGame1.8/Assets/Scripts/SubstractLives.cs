@@ -28,6 +28,7 @@ public class SubstractLives : MonoBehaviour
         LivesText.text = "Lives: " + Lives;
         FinalScoreText.text = "Final Score: " + ScoreScript.scoreAmount;
 
+        //used for displaying the Play Again button and all other game over texts
         if (Lives == 0)
         {
             GameOver.SetActive(true);

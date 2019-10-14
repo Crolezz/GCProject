@@ -19,11 +19,12 @@ public class BoxLauncher : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        GameObject A = GameObject.Find("DeathTrigger");
+        GameObject A = GameObject.Find("DeathTrigger");           
         SubstractLives B = A.GetComponent<SubstractLives>();
 
             nextFire -= Time.deltaTime;
-
+        
+            //if the game is over, no more objects will be fired
             if (nextFire <= 0 && B.GameIsOver == false)
             {
                 nextFire = fireDelay;
