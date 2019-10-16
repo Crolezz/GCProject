@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 937350141953615506}
   - component: {fileID: -188445895608538002}
   - component: {fileID: -8595200016954291961}
+  - component: {fileID: 1798134843264572572}
   m_Layer: 0
   m_Name: tri1
   m_TagString: Stackables
@@ -60,6 +61,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -157,5 +159,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dad11a7afea17674e907877342b9978f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1798134843264572572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937350141953615505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16da1c41faeecf40898825f6d26b8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

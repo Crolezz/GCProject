@@ -16,7 +16,6 @@ public class BoxLauncher : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         GameObject A = GameObject.Find("DeathTrigger");           
@@ -36,11 +35,9 @@ public class BoxLauncher : MonoBehaviour
 
                 boxGO.GetComponent<Rigidbody2D>().velocity = transform.rotation * new Vector2(0, fireVelocity);
 
-                ScoreScript.scoreAmount++;
+                //ScoreScript.scoreAmount++;
             }
-        
 
-    
-
+           
     }
 }
