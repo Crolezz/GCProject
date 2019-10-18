@@ -13,10 +13,10 @@ public class DetectStationary : MonoBehaviour
         {      
             timeToStationary -= Time.deltaTime;
 
-            /*foreach (ContactPoint2D contact in other.contacts)
+            foreach (ContactPoint2D contact in other.contacts)
             {
                 Debug.DrawRay(contact.point, contact.normal * 10, Color.white);
-            }*/
+            }
         }
     }
 
@@ -30,7 +30,7 @@ public class DetectStationary : MonoBehaviour
             timeToStationary = 1000;
         }
 
-        Debug.Log(timeToStationary);
+        //Debug.Log(timeToStationary);
     }
 
 }

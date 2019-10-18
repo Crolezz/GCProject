@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class SubstractLives : MonoBehaviour
 {
     public int Lives = 3;
+    private float waitFall = 1f;
     public Text LivesText;
     public GameObject GameOver;
     public GameObject PlayAgain;
     public GameObject FinalScore;
     public GameObject Score;
+    public GameObject PlatformFalls;
     public Text FinalScoreText;
     public bool GameIsOver = false;
 
@@ -36,6 +38,16 @@ public class SubstractLives : MonoBehaviour
             FinalScore.SetActive(true);
             Score.SetActive(false);
             GameIsOver = true;
+        }
+
+        if (GameIsOver == true)
+        {
+            waitFall -= Time.deltaTime;
+
+            if (waitFall <= 0f)
+            {
+                PlatformFalls.SetActive(false);
+            }
         }
     }
 }

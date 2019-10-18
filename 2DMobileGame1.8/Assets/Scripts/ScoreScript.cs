@@ -7,6 +7,8 @@ public class ScoreScript : MonoBehaviour
 {
     public static int scoreAmount;
     private Text scoreText;
+    public GameObject GoodText;
+    public GameObject AmazingText;
 
 
      void Start()
@@ -18,5 +20,16 @@ public class ScoreScript : MonoBehaviour
     void Update()
     {
         scoreText.text = "Score: " + scoreAmount;
+
+        if (scoreAmount >= 5 && scoreAmount < 10)
+        {
+            GoodText.SetActive(true);
+        }
+        else if (scoreAmount >= 10)
+        {
+            GoodText.SetActive(false);
+            AmazingText.SetActive(true);
+        }
+
     }
 }
