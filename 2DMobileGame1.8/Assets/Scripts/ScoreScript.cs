@@ -40,11 +40,12 @@ public class ScoreScript : MonoBehaviour
 
         scoreText.text = "Score: " + scoreAmount;
 
-        if (scoreAmount >= 5 && scoreAmount < 10)
+        //Modifies the announcements depending on what score the user is at
+        if (scoreAmount >= 5 && scoreAmount < 6)
         {
             GoodText.SetActive(true);
         }
-        else if (scoreAmount >= 10)
+        else if (scoreAmount >= 10 && scoreAmount < 11)
         {
             GoodText.SetActive(false);
             AmazingText.SetActive(true);
