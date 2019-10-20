@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SubstractLives : MonoBehaviour
 {
     public int Lives = 3;
-    private float waitFall = 4f;
+    private float waitFall = 6f;
     public Text LivesText;
     public GameObject GameOver;
     public GameObject PlayAgain;
@@ -18,7 +18,7 @@ public class SubstractLives : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Stackables" && Lives > 0)
+        if (collision.tag == "Stackables" && Lives > 0 && GameIsOver == false)
         {
             Lives = Lives - 1;
         }
