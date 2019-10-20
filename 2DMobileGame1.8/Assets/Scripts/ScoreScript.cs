@@ -50,7 +50,8 @@ public class ScoreScript : MonoBehaviour
             AmazingText.SetActive(true);
         }
 
-        if (CurrentLevel == 1 && scoreAmount >= 2)
+        //Level Score Modifier
+        if (CurrentLevel == 1 && scoreAmount >= 10)
         {
             B.GameIsOver = true;
             LevelOver.SetActive(true);
