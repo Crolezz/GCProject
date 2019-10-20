@@ -14,7 +14,7 @@ public class MouseManager : MonoBehaviour
         GameObject C = GameObject.Find("DeathTrigger");               //this makes it so that you can't
         SubstractLives D = C.GetComponent<SubstractLives>();          //grab any object when the game is over
 
-        if (Input.GetMouseButtonDown(0) && D.GameIsOver == false)    
+        if (Input.GetMouseButtonDown(0) && D.GameIsOver == false)
         {
             //Clicked
             Vector3 MouseWorldPos3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -27,10 +27,11 @@ public class MouseManager : MonoBehaviour
                 {
                     grabbedObject = HitTest.collider.GetComponent<Rigidbody2D>();
                     grabbedObject.gravityScale = 0;
-                    dragLine.enabled = true;
+                    //dragLine.enabled = true;
                 }
             }
         }
+        
         if (Input.GetMouseButtonUp(0) && grabbedObject != null)
         {
             grabbedObject.gravityScale = 1;

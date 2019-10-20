@@ -40,6 +40,7 @@ public class SubstractLives : MonoBehaviour
             GameIsOver = true;
         }
 
+        //Game Over events happen here
         if (GameIsOver == true)
         {
             waitFall -= Time.deltaTime;

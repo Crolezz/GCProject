@@ -5,7 +5,7 @@ using UnityEngine;
 public class DetectStationary : MonoBehaviour
 {
     private float timeToStationary = 1f;
-    public bool isStationary = false;
+    public static bool isStationary = false;
     private bool betweenStationary = false;
 
     void OnCollisionStay2D(Collision2D other)
@@ -43,7 +43,7 @@ public class DetectStationary : MonoBehaviour
         }
 
         //Debug.Log(timeToStationary);
-        Debug.Log(gameObject.GetComponent<Rigidbody2D>().velocity.y);
+        //Debug.Log(gameObject.GetComponent<Rigidbody2D>().velocity.y);
     }
 
 }
