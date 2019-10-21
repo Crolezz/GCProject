@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class CameraMover : MonoBehaviour
 {
-     public float targetY = 0;
-  
+     public float targetY;
 
+    private void Start()
+    {
+        targetY = -0.2f;
+    }
     // Update is called once per frame
     void Update()
     {

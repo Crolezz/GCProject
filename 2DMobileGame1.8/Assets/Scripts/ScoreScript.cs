@@ -93,5 +93,6 @@ public class ScoreScript : MonoBehaviour
         BoxLauncher.nextFire = 3f;
 
         CameraModify.orthographicSize = 3;
+        CameraModify.transform.position = new Vector3(0, -1.11f, -10);
     }
 }

@@ -1188,7 +1188,6 @@ MonoBehaviour:
   - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
   - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
   fireDelay: 6
-  nextFire: 1
   fireVelocity: 9
 --- !u!4 &1378553770
 Transform:
@@ -1317,7 +1316,6 @@ MonoBehaviour:
   - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
   - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
   fireDelay: 6
-  nextFire: 4
   fireVelocity: 9
 --- !u!4 &1488510417
 Transform:
