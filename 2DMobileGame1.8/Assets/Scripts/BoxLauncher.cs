@@ -6,7 +6,7 @@ public class BoxLauncher : MonoBehaviour
 {
     public GameObject[] boxPrefabs;
     public float fireDelay = 3f;
-    public float nextFire = 1f;
+    public static float nextFire = 1f;
 
     public float fireVelocity = 10f;
 

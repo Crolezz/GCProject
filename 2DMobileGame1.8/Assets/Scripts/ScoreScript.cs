@@ -19,6 +19,7 @@ public class ScoreScript : MonoBehaviour
     public GameObject AmazingText;
     public GameObject LevelOver;
     public GameObject NextLevelButton;
+    public GameObject PlatformFalls;
     public Camera CameraModify;
 
      void Start()
@@ -52,13 +53,17 @@ public class ScoreScript : MonoBehaviour
         }
 
         //Level Score Modifier
-        if (CurrentLevel == 1 && scoreAmount >= 10)
+        if (CurrentLevel == 1 && scoreAmount >= 2)
         {
             B.GameIsOver = true;
             LevelOver.SetActive(true);
             LevelOverText.text = "Congratulations! You have finished Level: " + CurrentLevel;
-            CurrentLevel++;
             NextLevelButton.SetActive(true);
+        }
+
+        if (CurrentLevel == 2 && scoreAmount >= 2)
+        {
+            Debug.Log("Level 2 Finished");
         }
 
         //This zooms out the camera liniarly when the game is over
@@ -67,11 +72,26 @@ public class ScoreScript : MonoBehaviour
             t += Time.deltaTime / 3f;  //3 represents the duration (in seconds) in which you want to zoom out
             CameraModify.orthographicSize = Mathf.Lerp(3, 5, t);
         }
-
     }
 
+    //This scripts resets the values for the next level and decides
+    //what to do before the level has started
     public void NextLevel()
     {
+        GameObject A = GameObject.Find("DeathTrigger");
+        SubstractLives B = A.GetComponent<SubstractLives>();
+
         SceneManager.LoadScene(nextSceneToLoad);
+
+        B.GameIsOver = false;
+        LevelOver.SetActive(false);
+        NextLevelButton.SetActive(false);
+        PlatformFalls.SetActive(true);
+        scoreAmount = 0;
+        CurrentLevel++;
+        SubstractLives.Lives = 3;
+        BoxLauncher.nextFire = 3f;
+
+        CameraModify.orthographicSize = 3;
     }
 }

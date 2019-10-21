@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SubstractLives : MonoBehaviour
 {
-    public int Lives = 3;
+    public static int Lives = 3;
     private float waitFall = 6f;
     public Text LivesText;
     public GameObject GameOver;
