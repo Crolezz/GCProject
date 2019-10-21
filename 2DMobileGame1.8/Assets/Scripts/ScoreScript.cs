@@ -53,19 +53,17 @@ public class ScoreScript : MonoBehaviour
         }
 
         //Level Score Modifier
-        if (CurrentLevel == 1 && scoreAmount >= 2)
+        for (int i = 1; i <= 10; i++)
         {
-            B.GameIsOver = true;
-            LevelOver.SetActive(true);
-            LevelOverText.text = "Congratulations! You have finished Level: " + CurrentLevel;
-            NextLevelButton.SetActive(true);
+            if (CurrentLevel == i && scoreAmount >= 5 * i)
+            {
+                B.GameIsOver = true;
+                LevelOver.SetActive(true);
+                LevelOverText.text = "Congratulations! You have finished Level: " + CurrentLevel;
+                NextLevelButton.SetActive(true);
+            }
         }
-
-        if (CurrentLevel == 2 && scoreAmount >= 2)
-        {
-            Debug.Log("Level 2 Finished");
-        }
-
+       
         //This zooms out the camera liniarly when the game is over
         if (B.GameIsOver == true)
         {
@@ -87,6 +85,8 @@ public class ScoreScript : MonoBehaviour
         LevelOver.SetActive(false);
         NextLevelButton.SetActive(false);
         PlatformFalls.SetActive(true);
+        GoodText.SetActive(false);
+        AmazingText.SetActive(false);
         scoreAmount = 0;
         CurrentLevel++;
         SubstractLives.Lives = 3;
