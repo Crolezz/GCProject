@@ -172,8 +172,8 @@ MonoBehaviour:
   - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
   - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
   - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
-  fireDelay: 6
   grayImage: {fileID: 1249604099}
+  fireDelay: 6
   fireVelocity: 9
 --- !u!1 &34254738
 GameObject:
@@ -630,8 +630,8 @@ MonoBehaviour:
   - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
   - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
   - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
-  fireDelay: 6
   grayImage: {fileID: 1249604099}
+  fireDelay: 6
   fireVelocity: 9
 --- !u!1 &227275610
 GameObject:
