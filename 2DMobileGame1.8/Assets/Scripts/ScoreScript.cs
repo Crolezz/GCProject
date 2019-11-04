@@ -14,10 +14,12 @@ public class ScoreScript : MonoBehaviour
 
     private Text scoreText;
     private Text LevelOverText;
+    private Text CurrentLevelText;
 
     public GameObject GoodText;
     public GameObject AmazingText;
     public GameObject LevelOver;
+    public GameObject CurrentLevelTextObject;
     public GameObject NextLevelButton;
     public GameObject PlatformFalls;
     public Camera CameraModify;
@@ -27,6 +29,7 @@ public class ScoreScript : MonoBehaviour
         CameraModify.GetComponent<Camera>();
         scoreText = GetComponent<Text>();
         LevelOverText = LevelOver.GetComponent<Text>();
+        CurrentLevelText = CurrentLevelTextObject.GetComponent<Text>();
 
         nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
 
@@ -36,10 +39,9 @@ public class ScoreScript : MonoBehaviour
 
     void Update()
     {
-        GameObject A = GameObject.Find("DeathTrigger");
-        SubstractLives B = A.GetComponent<SubstractLives>();
 
         scoreText.text = "Score: " + scoreAmount;
+        CurrentLevelText.text = "Level " + CurrentLevel;
 
         //Modifies the announcements depending on what score the user is at
         if (scoreAmount >= 5 && scoreAmount < 6)
@@ -57,15 +59,15 @@ public class ScoreScript : MonoBehaviour
         {
             if (CurrentLevel == i && scoreAmount >= 5 * i)
             {
-                B.GameIsOver = true;
+                SubstractLives.GameIsOver = true;
                 LevelOver.SetActive(true);
-                LevelOverText.text = "Congratulations! You have finished Level: " + CurrentLevel;
+                LevelOverText.text = "Congratulations! You have finished Level " + CurrentLevel;
                 NextLevelButton.SetActive(true);
             }
         }
        
         //This zooms out the camera liniarly when the game is over
-        if (B.GameIsOver == true)
+        if (SubstractLives.GameIsOver == true)
         {
             t += Time.deltaTime / 3f;  //3 represents the duration (in seconds) in which you want to zoom out
             CameraModify.orthographicSize = Mathf.Lerp(3, 5, t);
@@ -81,7 +83,7 @@ public class ScoreScript : MonoBehaviour
 
         SceneManager.LoadScene(nextSceneToLoad);
 
-        B.GameIsOver = false;
+        SubstractLives.GameIsOver = false;
         LevelOver.SetActive(false);
         NextLevelButton.SetActive(false);
         PlatformFalls.SetActive(true);

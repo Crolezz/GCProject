@@ -35,7 +35,7 @@ public class DetectStationary : MonoBehaviour
             }
         }
 
-        if (timeToStationary <= 0)
+        if (timeToStationary <= 0 && SubstractLives.GameIsOver == false)
         {
             isStationary = true;
             ScoreScript.scoreAmount++;

@@ -14,7 +14,7 @@ public class SubstractLives : MonoBehaviour
     public GameObject Score;
     public GameObject PlatformFalls;
     public Text FinalScoreText;
-    public bool GameIsOver = false;
+    public static bool GameIsOver = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,7 +26,7 @@ public class SubstractLives : MonoBehaviour
 
     void Update()
     {
-       
+        Debug.Log(GameIsOver);
         LivesText.text = "Lives: " + Lives;
         FinalScoreText.text = "Final Score: " + ScoreScript.scoreAmount;
 
