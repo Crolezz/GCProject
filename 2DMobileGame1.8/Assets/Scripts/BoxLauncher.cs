@@ -16,27 +16,29 @@ public class BoxLauncher : MonoBehaviour
         
     }
 
+    void Update()
+    {
+        if (ScoreScript.CurrentLevel == 2)
+        {
+            fireDelay = 6f; //Divide it by 2 for seconds
+        }
+    }
     void FixedUpdate()
     {
-        //GameObject A = GameObject.Find("DeathTrigger");           
-        //SubstractLives B = A.GetComponent<SubstractLives>();
+        nextFire -= Time.deltaTime;
 
-            nextFire -= Time.deltaTime;
-        
-            //if the game is over, no more objects will be fired
-            if (nextFire <= 0 && SubstractLives.GameIsOver == false)
-            {
-                nextFire = fireDelay;
+        //if the game is over, no more objects will be fired
+        if (nextFire <= 0 && SubstractLives.GameIsOver == false)
+         {
+            nextFire = fireDelay;
 
-                GameObject boxGO = (GameObject)Instantiate(boxPrefabs[Random.Range(0, boxPrefabs.Length)],
-                     transform.position,
-                     transform.rotation
-                            );
+            GameObject boxGO = (GameObject)Instantiate(boxPrefabs[Random.Range(0, boxPrefabs.Length)],
+                 transform.position,
+                 transform.rotation
+                        );
 
-                boxGO.GetComponent<Rigidbody2D>().velocity = transform.rotation * new Vector2(0, fireVelocity);
-
-                //ScoreScript.scoreAmount++;
-            }
+            boxGO.GetComponent<Rigidbody2D>().velocity = transform.rotation * new Vector2(0, fireVelocity);
+         }
 
            
     }

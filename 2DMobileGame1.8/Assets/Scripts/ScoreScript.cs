@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class ScoreScript : MonoBehaviour
 {
     public static int scoreAmount;
-    private int CurrentLevel;
+    public static int CurrentLevel;
     private int nextSceneToLoad;
     private float deltaZoom;
     public float t = 0;
@@ -23,6 +23,8 @@ public class ScoreScript : MonoBehaviour
     public GameObject NextLevelButton;
     public GameObject PlatformFalls;
     public Camera CameraModify;
+
+    public GameObject GoodTextEffect;
 
      void Start()
     {
@@ -46,7 +48,7 @@ public class ScoreScript : MonoBehaviour
         //Modifies the announcements depending on what score the user is at
         if (scoreAmount >= 5 && scoreAmount < 6)
         {
-            GoodText.SetActive(true);
+            GoodText.SetActive(true);           
         }
         else if (scoreAmount >= 10 && scoreAmount < 11)
         {
@@ -65,13 +67,15 @@ public class ScoreScript : MonoBehaviour
                 NextLevelButton.SetActive(true);
             }
         }
-       
+
         //This zooms out the camera liniarly when the game is over
         if (SubstractLives.GameIsOver == true)
         {
+            
             t += Time.deltaTime / 3f;  //3 represents the duration (in seconds) in which you want to zoom out
             CameraModify.orthographicSize = Mathf.Lerp(3, 5, t);
         }
+
     }
 
     //This scripts resets the values for the next level and decides
@@ -80,6 +84,9 @@ public class ScoreScript : MonoBehaviour
     {
         GameObject A = GameObject.Find("DeathTrigger");
         SubstractLives B = A.GetComponent<SubstractLives>();
+
+        GameObject C = GameObject.Find("Main Camera");
+        CameraMover D = C.GetComponent<CameraMover>();
 
         SceneManager.LoadScene(nextSceneToLoad);
 
@@ -93,6 +100,8 @@ public class ScoreScript : MonoBehaviour
         CurrentLevel++;
         SubstractLives.Lives = 3;
         BoxLauncher.nextFire = 3f;
+        D.targetY = -0.2f;
+        
 
         CameraModify.orthographicSize = 3;
         CameraModify.transform.position = new Vector3(0, -1.11f, -10);

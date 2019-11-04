@@ -430,6 +430,8 @@ MonoBehaviour:
   NextLevelButton: {fileID: 34254738}
   PlatformFalls: {fileID: 1826397992}
   CameraModify: {fileID: 519420031}
+  GoodTextEffect: {fileID: 2542911124419695484, guid: 6a95efa38a1eead4d927b2b283c6424c,
+    type: 3}
 --- !u!114 &146798349
 MonoBehaviour:
   m_ObjectHideFlags: 0
