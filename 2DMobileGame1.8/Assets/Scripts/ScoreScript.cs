@@ -10,6 +10,7 @@ public class ScoreScript : MonoBehaviour
     public static int CurrentLevel;
     private int nextSceneToLoad;
     private float deltaZoom;
+
     public float t = 0;
 
     private Text scoreText;
@@ -33,27 +34,31 @@ public class ScoreScript : MonoBehaviour
         LevelOverText = LevelOver.GetComponent<Text>();
         CurrentLevelText = CurrentLevelTextObject.GetComponent<Text>();
 
-        nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
-
         scoreAmount = 0;
         CurrentLevel = 1;
     }
 
     void Update()
     {
+        nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
 
         scoreText.text = "Score: " + scoreAmount;
         CurrentLevelText.text = "Level " + CurrentLevel;
 
         //Modifies the announcements depending on what score the user is at
-        if (scoreAmount >= 5 && scoreAmount < 6)
+        if (scoreAmount >= 5 && scoreAmount <= 6)
         {
             GoodText.SetActive(true);           
         }
-        else if (scoreAmount >= 10 && scoreAmount < 11)
+        else if (scoreAmount >= 10 && scoreAmount <= 11)
         {
             GoodText.SetActive(false);
             AmazingText.SetActive(true);
+        }
+        else
+        {
+            GoodText.SetActive(false);
+            AmazingText.SetActive(false);
         }
 
         //Level Score Modifier
@@ -71,7 +76,6 @@ public class ScoreScript : MonoBehaviour
         //This zooms out the camera liniarly when the game is over
         if (SubstractLives.GameIsOver == true)
         {
-            
             t += Time.deltaTime / 3f;  //3 represents the duration (in seconds) in which you want to zoom out
             CameraModify.orthographicSize = Mathf.Lerp(3, 5, t);
         }
@@ -97,8 +101,10 @@ public class ScoreScript : MonoBehaviour
         GoodText.SetActive(false);
         AmazingText.SetActive(false);
         scoreAmount = 0;
+        t = 0;
         CurrentLevel++;
         SubstractLives.Lives = 3;
+        SubstractLives.waitFall = 6f;
         BoxLauncher.nextFire = 3f;
         D.targetY = -0.2f;
         

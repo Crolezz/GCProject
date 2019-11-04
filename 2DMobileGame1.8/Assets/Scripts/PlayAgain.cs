@@ -20,5 +20,7 @@ public class PlayAgain : MonoBehaviour
         SceneManager.LoadScene("LEVEL1");
         SubstractLives.Lives = 3;
         SubstractLives.GameIsOver = false;
+        BoxLauncher.showTutorialOnce = true;
+        BoxLauncher.nextStartGameTimer = 4f;
     }
 }

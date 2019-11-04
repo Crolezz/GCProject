@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SubstractLives : MonoBehaviour
 {
     public static int Lives = 3;
-    private float waitFall = 6f;
+    public static float waitFall = 6f;
     public Text LivesText;
     public GameObject GameOver;
     public GameObject PlayAgain;
@@ -26,7 +26,6 @@ public class SubstractLives : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(GameIsOver);
         LivesText.text = "Lives: " + Lives;
         FinalScoreText.text = "Final Score: " + ScoreScript.scoreAmount;
 
