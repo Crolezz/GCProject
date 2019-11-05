@@ -11,8 +11,8 @@ public class BoxLauncher : MonoBehaviour
     public static float nextFire = 1f;
 
     private float startGameTimer = 0f;
-    public static float nextStartGameTimer = 14f;  //set the seconds that you want to wait before the game starts
-    private bool canStartGame = false;             //the amount of seconds is nextStartGameTimer / 2
+    public static float nextStartGameTimer = 14f;  //set the seconds that you want to wait before the game starts (only works when the game first starts)
+    private bool canStartGame = false;             //the amount of seconds is nextStartGameTimer / 2              (not when you click "Play Again")
     public static bool showTutorialOnce = false;   
 
     public float fireVelocity = 10f;
