@@ -55,12 +55,13 @@ public class BoxLauncher : MonoBehaviour
          {
             nextFire = fireDelay;
 
-            GameObject boxGO = (GameObject)Instantiate(boxPrefabs[Random.Range(0, boxPrefabs.Length)],
+            GameObject boxGO = Instantiate(boxPrefabs[Random.Range(0, boxPrefabs.Length)],
                  transform.position,
-                 transform.rotation
+                 Quaternion.identity
                         );
 
             boxGO.GetComponent<Rigidbody2D>().velocity = transform.rotation * new Vector2(0, fireVelocity);
+            
          }
     }
 }

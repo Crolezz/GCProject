@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class DetectStationary : MonoBehaviour
 {
-    private float timeToStationary = 1f;
-    public static bool isStationary = false;
-    private bool betweenStationary = false;
+    private float timeToStationary = 0.75f;
+    public bool isStationary = false;
+    public bool betweenStationary = false;
+
+    private bool checkStationary = false;
 
     void OnCollisionStay2D(Collision2D other)
     {
@@ -37,13 +39,18 @@ public class DetectStationary : MonoBehaviour
 
         if (timeToStationary <= 0 && SubstractLives.GameIsOver == false)
         {
-            isStationary = true;
-            ScoreScript.scoreAmount++;
-            timeToStationary = 1000;
+            if (!checkStationary)
+            {
+                isStationary = true;
+                ScoreScript.scoreAmount++;
+                checkStationary = true;
+            }
+            
+            //timeToStationary = 100f;
         }
-
         //Debug.Log(timeToStationary);
-        //Debug.Log(gameObject.GetComponent<Rigidbody2D>().velocity.y);
+        
+        
     }
 
 }

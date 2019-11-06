@@ -7,6 +7,8 @@ TagManager:
   - BoxDestroyer
   - Stackables
   - Score
+  - Platform
+  - Canvas
   layers:
   - Default
   - TransparentFX
