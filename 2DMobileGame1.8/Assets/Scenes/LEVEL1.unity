@@ -169,9 +169,9 @@ MonoBehaviour:
   boxPrefabs:
   - {fileID: 937350141953615505, guid: d9ab461b565a274408fa101e19748f85, type: 3}
   - {fileID: 1464993781820868073, guid: 2add3671e39159748ac39ce3ca45b99f, type: 3}
-  - {fileID: 5837122216581650101, guid: 14ee0a62a2d476049b57f8d8457d713c, type: 3}
-  - {fileID: 5837122216581650101, guid: 14ee0a62a2d476049b57f8d8457d713c, type: 3}
-  - {fileID: 5837122216581650101, guid: 14ee0a62a2d476049b57f8d8457d713c, type: 3}
+  - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
+  - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
+  - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
   grayImage: {fileID: 1249604099}
   fireDelay: 6
   fireVelocity: 9
@@ -627,9 +627,9 @@ MonoBehaviour:
   boxPrefabs:
   - {fileID: 937350141953615505, guid: d9ab461b565a274408fa101e19748f85, type: 3}
   - {fileID: 1464993781820868073, guid: 2add3671e39159748ac39ce3ca45b99f, type: 3}
-  - {fileID: 5837122216581650101, guid: 14ee0a62a2d476049b57f8d8457d713c, type: 3}
-  - {fileID: 5837122216581650101, guid: 14ee0a62a2d476049b57f8d8457d713c, type: 3}
-  - {fileID: 5837122216581650101, guid: 14ee0a62a2d476049b57f8d8457d713c, type: 3}
+  - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
+  - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
+  - {fileID: 952896770388460498, guid: f8923fd7068ce8e4a89d79ef870bc114, type: 3}
   grayImage: {fileID: 1249604099}
   fireDelay: 6
   fireVelocity: 9
