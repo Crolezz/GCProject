@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuControl : MonoBehaviour
 {
     public string mainMenuScene;
+    public string restartLvl;
     public GameObject pauseMenu;
     public bool isPaused;
     // Start is called before the first frame update
@@ -36,9 +37,32 @@ public class MenuControl : MonoBehaviour
 
     public void Resume()
     {
+        Debug.Log("Resume");
         isPaused = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        GameObject A = GameObject.Find("DDOL");
+        DontDesOnLoad B = A.GetComponent<DontDesOnLoad>();
+
+        for (int i = 0; i < B.GetRidOfIt.Length; i++)
+        {
+            Destroy(B.GetRidOfIt[i]);
+        }
+
+        SceneManager.LoadScene("LEVEL1");
+        SubstractLives.Lives = 3;
+        SubstractLives.GameIsOver = false;
+        BoxLauncher.showTutorialOnce = true;
+        BoxLauncher.nextStartGameTimer = 4f;
+        SceneManager.LoadScene("LEVEL1");
+        isPaused = false;
+        pauseMenu.SetActive(false);
+
     }
 
     public void RTNmainmenu()
