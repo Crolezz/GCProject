@@ -68,7 +68,7 @@ public class ScoreScript : MonoBehaviour
             {
                 SubstractLives.GameIsOver = true;
                 LevelOver.SetActive(true);
-                LevelOverText.text = "Congratulations! You have finished Level " + CurrentLevel;
+                LevelOverText.text = "You have finished Level " + CurrentLevel;
                 NextLevelButton.SetActive(true);
             }
         }
