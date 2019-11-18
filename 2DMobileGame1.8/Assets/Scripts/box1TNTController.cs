@@ -6,15 +6,24 @@ using UnityEngine.UI;
 public class box1TNTController : MonoBehaviour
 {
     public Text exploText;
+    public Rigidbody2D rb;
+    public PointEffector2D PointE;
 
     private float nextExploCounter = 5f;
 
     public float a = 0;
     public float b = 0;
+    private float activateEffector = 0.10f;
 
     void Start()
     {
         exploText = gameObject.GetComponentInChildren<Text>();
+        rb = GetComponent<Rigidbody2D>();
+        PointE = GetComponent<PointEffector2D>();
+
+        PointE.forceMagnitude = 0f;
+        PointE.forceVariation = 0f;
+        PointE.distanceScale = 0f;
     }
 
     void Update()
@@ -30,8 +39,22 @@ public class box1TNTController : MonoBehaviour
             exploText.text = "" + Mathf.RoundToInt(nextExploCounter);
         }
         else if (nextExploCounter <= 0f && s.isStationary == false)
-        {
-            Destroy(gameObject);
+        {     
+            PointE.forceMagnitude = 100f;
+            PointE.forceVariation = 30f;
+            PointE.distanceScale = 1f;
+
+            activateEffector -= Time.deltaTime;
+
+            if (activateEffector <= 0)
+            {
+                PointE.forceMagnitude = 0f;
+                PointE.forceVariation = 0f;
+                PointE.distanceScale = 0f;
+
+                Destroy(gameObject);
+            }
+            
         }
         if (s.isStationary == true)
         {
@@ -53,7 +76,8 @@ public class box1TNTController : MonoBehaviour
                 exploText.rectTransform.localScale = new Vector3(Mathf.Lerp(1.5f, 1f, b), Mathf.Lerp(1.5f, 1, b), Mathf.Lerp(1.5f, 1f, b));
             }
         }
-     
+
+        
         //Debug.Log(nextExploCounter);
         //Debug.Log(DetectStationary.isStationary);
     }
