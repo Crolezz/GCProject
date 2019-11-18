@@ -68,7 +68,15 @@ public class MenuControl : MonoBehaviour
     public void RTNmainmenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(mainMenuScene);
+        SceneManager.LoadScene("START SCREEN");
+
+        GameObject A = GameObject.Find("DDOL");
+        DontDesOnLoad B = A.GetComponent<DontDesOnLoad>();
+
+        for (int i = 0; i < B.GetRidOfIt.Length; i++)
+        {
+            Destroy(B.GetRidOfIt[i]);
+        }
 
     }
 }
