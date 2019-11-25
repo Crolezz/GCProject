@@ -795,8 +795,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 638597207}
-        m_MethodName: TogglePause
+      - m_Target: {fileID: 638597211}
+        m_MethodName: Togglesc
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3549,6 +3549,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879929610335444463, guid: 03384c7a334132e489265f0d66be6e33,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Togglesc
       objectReference: {fileID: 0}
     - target: {fileID: 4879929610634397409, guid: 03384c7a334132e489265f0d66be6e33,
         type: 3}
