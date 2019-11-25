@@ -33,13 +33,13 @@ public class box1TNTController : MonoBehaviour
         DetectStationary s = S.GetComponent<DetectStationary>();
 
         //shows the timer to explode in seconds (displayed on the box)
-        if (nextExploCounter >= 0 &&  s.isStationary== false)
+        if (nextExploCounter >= 0 &&  s.isStationary== false && SubstractLives.GameIsOver == false)
         {
             nextExploCounter -= Time.deltaTime;
 
             exploText.text = "" + Mathf.RoundToInt(nextExploCounter);
         }
-        else if (nextExploCounter <= 0f && s.isStationary == false)
+        else if (nextExploCounter <= 0f && s.isStationary == false && SubstractLives.GameIsOver == false)
         {     
             //simulates explosion but only when the tnt block directly collides with another placeable
             PointE.forceMagnitude = 100f;
@@ -58,7 +58,7 @@ public class box1TNTController : MonoBehaviour
             }
             
         }
-        if (s.isStationary == true)
+        if (s.isStationary == true && SubstractLives.GameIsOver == false)
         {
             Destroy(exploText);
         }
