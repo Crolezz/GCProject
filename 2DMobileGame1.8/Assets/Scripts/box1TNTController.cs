@@ -13,7 +13,7 @@ public class box1TNTController : MonoBehaviour
 
     public float a = 0;
     public float b = 0;
-    private float activateEffector = 0.10f;
+    private float activateEffector = 0.10f; //explosion happens for 0.10 seconds
 
     void Start()
     {
@@ -21,6 +21,7 @@ public class box1TNTController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         PointE = GetComponent<PointEffector2D>();
 
+        //explosion parameters
         PointE.forceMagnitude = 0f;
         PointE.forceVariation = 0f;
         PointE.distanceScale = 0f;
@@ -40,6 +41,7 @@ public class box1TNTController : MonoBehaviour
         }
         else if (nextExploCounter <= 0f && s.isStationary == false)
         {     
+            //simulates explosion but only when the tnt block directly collides with another placeable
             PointE.forceMagnitude = 100f;
             PointE.forceVariation = 30f;
             PointE.distanceScale = 1f;
