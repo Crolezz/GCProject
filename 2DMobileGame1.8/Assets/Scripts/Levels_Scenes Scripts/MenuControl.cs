@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class MenuControl : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class MenuControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Button>().onClick.AddListener(Togglesc);
+        
     }
 
     // Update is called once per frame
@@ -34,23 +33,6 @@ public class MenuControl : MonoBehaviour
             }
         }
        
-    }
-
-    public void Togglesc()
-    {
-        {
-            if (isPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                isPaused = true;
-                pauseMenu.SetActive(true);
-                Time.timeScale = 0f;
-
-            }
-        }
     }
 
     public void Resume()
@@ -97,5 +79,4 @@ public class MenuControl : MonoBehaviour
         }
 
     }
-  
 }

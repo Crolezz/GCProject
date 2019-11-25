@@ -13,7 +13,7 @@ public class box1TNTController : MonoBehaviour
 
     public float a = 0;
     public float b = 0;
-    private float activateEffector = 0.10f; //explosion happens for 0.10 seconds
+    private float activateEffector = 0.10f;
 
     void Start()
     {
@@ -21,7 +21,6 @@ public class box1TNTController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         PointE = GetComponent<PointEffector2D>();
 
-        //explosion parameters
         PointE.forceMagnitude = 0f;
         PointE.forceVariation = 0f;
         PointE.distanceScale = 0f;
@@ -33,15 +32,14 @@ public class box1TNTController : MonoBehaviour
         DetectStationary s = S.GetComponent<DetectStationary>();
 
         //shows the timer to explode in seconds (displayed on the box)
-        if (nextExploCounter >= 0 &&  s.isStationary== false && SubstractLives.GameIsOver == false)
+        if (nextExploCounter >= 0 &&  s.isStationary== false)
         {
             nextExploCounter -= Time.deltaTime;
 
             exploText.text = "" + Mathf.RoundToInt(nextExploCounter);
         }
-        else if (nextExploCounter <= 0f && s.isStationary == false && SubstractLives.GameIsOver == false)
+        else if (nextExploCounter <= 0f && s.isStationary == false)
         {     
-            //simulates explosion but only when the tnt block directly collides with another placeable
             PointE.forceMagnitude = 100f;
             PointE.forceVariation = 30f;
             PointE.distanceScale = 1f;
@@ -58,7 +56,7 @@ public class box1TNTController : MonoBehaviour
             }
             
         }
-        if (s.isStationary == true && SubstractLives.GameIsOver == false)
+        if (s.isStationary == true)
         {
             Destroy(exploText);
         }
