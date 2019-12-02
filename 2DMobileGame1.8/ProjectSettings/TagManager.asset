@@ -9,6 +9,7 @@ TagManager:
   - Score
   - Platform
   - Canvas
+  - LifeUp
   layers:
   - Default
   - TransparentFX
