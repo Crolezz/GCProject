@@ -27,8 +27,25 @@ public class PowerUp : MonoBehaviour
                 Destroy(gameObject);
             }
 
-
+            if (HitTest.collider.GetComponent<Rigidbody2D>() != null && HitTest.collider.CompareTag("SlowTime"))
+            {
+                Time.timeScale = 0.5f;
+                StartCoroutine(AfterTime(3.0f));
+                gameObject.GetComponent<Renderer>().enabled = false;
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            }
 
         }
+    }
+
+    IEnumerator AfterTime (float time)
+    {
+        Debug.Log("test");
+
+        yield return new WaitForSeconds(time);
+        Debug.Log("test");
+        Time.timeScale = 1.0f;
+        Destroy(gameObject);
+        gameObject.GetComponent<DeathTrigger>().enabled = false;
     }
 }
