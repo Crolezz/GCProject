@@ -28,10 +28,10 @@ public class DetectStationary : MonoBehaviour
     {
         if (betweenStationary == true)
         {
-            if (gameObject.GetComponent<Rigidbody2D>().velocity.y >= -0.1f &&
-                gameObject.GetComponent<Rigidbody2D>().velocity.y <= 0.1f &&
-                gameObject.GetComponent<Rigidbody2D>().velocity.x <= 0.1f &&
-                gameObject.GetComponent<Rigidbody2D>().velocity.x >= -0.1f)
+            if (gameObject.GetComponent<Rigidbody2D>().velocity.y >= -0.2f &&
+                gameObject.GetComponent<Rigidbody2D>().velocity.y <= 0.2f &&
+                gameObject.GetComponent<Rigidbody2D>().velocity.x <= 0.2f &&
+                gameObject.GetComponent<Rigidbody2D>().velocity.x >= -0.2f)
             {
                 timeToStationary -= Time.deltaTime;
             }

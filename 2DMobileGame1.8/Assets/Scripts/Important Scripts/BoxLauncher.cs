@@ -7,8 +7,8 @@ public class BoxLauncher : MonoBehaviour
     public GameObject[] boxPrefabs;
     public GameObject grayImage;
 
-    public float fireDelay = 3f;
-    public static float nextFire = 1f;
+    public float fireDelay = 6f;
+    public static float nextFire = 3f;
 
     private float startGameTimer = 0f;
     public static float nextStartGameTimer = 14f;  //set the seconds that you want to wait before the game starts (only works when the game first starts)
@@ -61,7 +61,8 @@ public class BoxLauncher : MonoBehaviour
                         );
 
             boxGO.GetComponent<Rigidbody2D>().velocity = transform.rotation * new Vector2(0, fireVelocity);
-            
+
          }
+        Debug.Log(nextFire);
     }
 }
