@@ -17,6 +17,8 @@ public class BoxLauncher : MonoBehaviour
 
     public float fireVelocity = 10f;
 
+    public AudioSource ObjectThrow;
+
     void Start()
     {                           
         if (showTutorialOnce == false && DDToggleTutorial.tutorialOn == true)
@@ -61,7 +63,8 @@ public class BoxLauncher : MonoBehaviour
                         );
 
             boxGO.GetComponent<Rigidbody2D>().velocity = transform.rotation * new Vector2(0, fireVelocity);
-
+            ObjectThrow.Play();
+            
          }
         Debug.Log(nextFire);
     }
