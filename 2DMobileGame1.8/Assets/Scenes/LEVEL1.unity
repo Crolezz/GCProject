@@ -936,7 +936,7 @@ RectTransform:
   m_GameObject: {fileID: 227275610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.38172537, y: 1.6278627, z: 0.37256125}
+  m_LocalScale: {x: 0.44661868, y: 0.71437705, z: 0.43589664}
   m_Children:
   - {fileID: 380347756}
   m_Father: {fileID: 638597206}
@@ -1021,8 +1021,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3ecc39131eb8fd74e9bd05727177307b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1127,7 +1127,7 @@ RectTransform:
   m_GameObject: {fileID: 380347755}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8174449, y: 0.4236478, z: 1.0932}
+  m_LocalScale: {x: 1.8174449, y: 0.15532623, z: 1.0932}
   m_Children: []
   m_Father: {fileID: 227275611}
   m_RootOrder: 0
@@ -1169,7 +1169,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pause
+  m_Text: 
 --- !u!222 &380347758
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4241,15 +4241,45 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4879929610335444456, guid: 03384c7a334132e489265f0d66be6e33,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71437705
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879929610335444456, guid: 03384c7a334132e489265f0d66be6e33,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.44661868
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879929610335444456, guid: 03384c7a334132e489265f0d66be6e33,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.43589664
+      objectReference: {fileID: 0}
     - target: {fileID: 4879929610335444463, guid: 03384c7a334132e489265f0d66be6e33,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Togglesc
       objectReference: {fileID: 0}
+    - target: {fileID: 4879929610335444462, guid: 03384c7a334132e489265f0d66be6e33,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879929610700122351, guid: 03384c7a334132e489265f0d66be6e33,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15532623
+      objectReference: {fileID: 0}
     - target: {fileID: 4879929610700122350, guid: 03384c7a334132e489265f0d66be6e33,
         type: 3}
       propertyPath: m_FontData.m_BestFit
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879929610700122350, guid: 03384c7a334132e489265f0d66be6e33,
+        type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4879929610634397409, guid: 03384c7a334132e489265f0d66be6e33,
         type: 3}
