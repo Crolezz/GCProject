@@ -1094,14 +1094,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   grayImage: {fileID: 1249604099}
   fireDelay: 0
   fireVelocity: 1
+  ObjectThrow: {fileID: 0}
 --- !u!1 &380347755
 GameObject:
   m_ObjectHideFlags: 0
