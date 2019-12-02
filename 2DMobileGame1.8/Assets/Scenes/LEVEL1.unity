@@ -889,6 +889,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxPrefabs:
   - {fileID: 3772009716219745011, guid: e71af3282ecc78d438ddb6dcb0e889e9, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   grayImage: {fileID: 1249604099}
   fireDelay: 0
   fireVelocity: 1
