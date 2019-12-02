@@ -46,11 +46,14 @@ public class DetectStationary : MonoBehaviour
                 checkStationary = true;
             }
             
-            //timeToStationary = 100f;
+            
         }
         //Debug.Log(timeToStationary);
         
-        
+        if (SubstractLives.GameIsOver == true)
+        {
+            timeToStationary = 1f;
+        }
     }
 
 }
