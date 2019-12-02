@@ -10,10 +10,13 @@ public class MenuControl : MonoBehaviour
     public string restartLvl;
     public GameObject pauseMenu;
     public bool isPaused;
+    public AudioSource BackTrack;
+
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(Togglesc);
+        BackTrack.Play();
     }
 
     // Update is called once per frame
