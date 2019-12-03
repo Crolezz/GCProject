@@ -2810,7 +2810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 0.54901963}
+  m_Color: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0.49019608}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2963,7 +2963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.14373443, g: 0.3207547, b: 0.1858713, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2982,7 +2982,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Tutorial\n\nFor the first level you have\nto get a score of 5.\nEach level
-    increases the\nscore you have to achieve by \nanother 5.\n\nGood luck!"
+    increases the\nscore you have to achieve by \nanother 5.\nGood luck!"
 --- !u!222 &1525332611
 CanvasRenderer:
   m_ObjectHideFlags: 0
