@@ -27,7 +27,7 @@ public class ScoreScript : MonoBehaviour
 
     public GameObject GoodTextEffect;
 
-    BoxLauncher newNextFire;
+    public BoxLauncher newNextFire;
 
      void Start()
     {
