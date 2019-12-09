@@ -43,8 +43,18 @@ public class ScoreScript : MonoBehaviour
         nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
 
         scoreText.text = "Score: " + scoreAmount;
-        CurrentLevelText.text = "Level " + CurrentLevel;
 
+        if (EndlessMode.thisMode == true)
+        {
+            CurrentLevelText.text = "Endless Mode";
+            CurrentLevelText.fontSize = 15;
+           
+        }
+        else if (EndlessMode.thisMode == false)
+        {
+            CurrentLevelText.text = "Level " + CurrentLevel;
+        }
+        
         //Modifies the announcements depending on what score the user is at
         if (scoreAmount >= 5 && scoreAmount <= 6)
         {
@@ -62,17 +72,29 @@ public class ScoreScript : MonoBehaviour
         }
 
         //Level Score Modifier
-        for (int i = 1; i <= 10; i++)
+        if (EndlessMode.thisMode == false)
         {
-            if (CurrentLevel == i && scoreAmount >= 5 * i)
+            for (int i = 1; i <= 10; i++)
+            {
+                if (CurrentLevel == i && scoreAmount >= 5 * i)
+                {
+                    SubstractLives.GameIsOver = true;
+                    LevelOver.SetActive(true);
+                    LevelOverText.text = "You have finished Level " + CurrentLevel;
+                    NextLevelButton.SetActive(true);
+                }
+            }
+        }
+        else if (EndlessMode.thisMode == true)
+        {
+            if (scoreAmount >= 100)
             {
                 SubstractLives.GameIsOver = true;
                 LevelOver.SetActive(true);
-                LevelOverText.text = "You have finished Level " + CurrentLevel;
-                NextLevelButton.SetActive(true);
+                LevelOverText.text = "You have finished Endless Mode";
             }
         }
-
+        
         //This zooms out the camera liniarly when the game is over
         if (SubstractLives.GameIsOver == true)
         {

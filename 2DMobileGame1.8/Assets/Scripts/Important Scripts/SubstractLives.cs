@@ -16,6 +16,17 @@ public class SubstractLives : MonoBehaviour
     public Text FinalScoreText;
     public static bool GameIsOver = false;
 
+    void Start()
+    {
+        if (EndlessMode.thisMode == true)
+        {
+            Lives = 5;
+        }
+        else
+        {
+            Lives = 3;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Stackables" && Lives > 0 && GameIsOver == false)

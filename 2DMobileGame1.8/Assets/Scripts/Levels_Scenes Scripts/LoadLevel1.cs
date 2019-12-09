@@ -22,6 +22,7 @@ public class LoadLevel1 : MonoBehaviour
         SceneManager.LoadScene("LEVEL1");
     }
 
+
     public void QuitApp()
     {
         Application.Quit();
