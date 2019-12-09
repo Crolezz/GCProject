@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class LoadLevel1 : MonoBehaviour
+public class BackButton : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,14 +18,12 @@ public class LoadLevel1 : MonoBehaviour
         
     }
 
-    public void LoadLevel()
+    public void RTNbutton()
     {
-        SceneManager.LoadScene("LEVEL1");
-    }
+    
+        SceneManager.LoadScene("START SCREEN");
 
 
-    public void QuitApp()
-    {
-        Application.Quit();
+
     }
 }

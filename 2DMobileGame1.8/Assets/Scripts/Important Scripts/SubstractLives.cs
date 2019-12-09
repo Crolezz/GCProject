@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SubstractLives : MonoBehaviour
 {
@@ -16,6 +17,17 @@ public class SubstractLives : MonoBehaviour
     public Text FinalScoreText;
     public static bool GameIsOver = false;
 
+    void Start()
+    {
+        if (EndlessMode.thisMode == true)
+        {
+            Lives = 5;
+        }
+        else if (EndlessMode.thisMode == false)
+        {
+            Lives = 3;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Stackables" && Lives > 0 && GameIsOver == false)
@@ -39,9 +51,19 @@ public class SubstractLives : MonoBehaviour
             GameIsOver = true;
         }
 
+        if (SceneManager.GetActiveScene().buildIndex == 6 && ScoreScript.scoreAmount == 30)
+        {
+            GameOver.SetActive(true);
+            PlayAgain.SetActive(true);
+            FinalScore.SetActive(true);
+            Score.SetActive(false);
+            GameIsOver = true;
+        }
+
         //Game Over events happen here
         if (GameIsOver == true)
         {
+
             waitFall -= Time.deltaTime;
 
             if (waitFall <= 0f)

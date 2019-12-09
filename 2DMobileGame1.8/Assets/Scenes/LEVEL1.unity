@@ -175,6 +175,7 @@ MonoBehaviour:
   - {fileID: 5837122216581650101, guid: 14ee0a62a2d476049b57f8d8457d713c, type: 3}
   grayImage: {fileID: 1249604099}
   fireDelay: 6
+  nextFire: 6
   fireVelocity: 9
   ObjectThrow: {fileID: 17789920}
 --- !u!82 &17789920
@@ -808,6 +809,7 @@ MonoBehaviour:
   - {fileID: 5837122216581650101, guid: 14ee0a62a2d476049b57f8d8457d713c, type: 3}
   grayImage: {fileID: 1249604099}
   fireDelay: 6
+  nextFire: 3
   fireVelocity: 9
   ObjectThrow: {fileID: 176103082}
 --- !u!82 &176103082
@@ -1092,10 +1094,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   grayImage: {fileID: 1249604099}
-  fireDelay: 0
+  fireDelay: 3
+  nextFire: 3
   fireVelocity: 1
   ObjectThrow: {fileID: 0}
 --- !u!1 &380347755
@@ -1386,8 +1387,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   grayImage: {fileID: 1249604099}
-  fireDelay: 0
+  fireDelay: 2
+  nextFire: 3
   fireVelocity: 1
   ObjectThrow: {fileID: 0}
 --- !u!20 &519420031
@@ -2046,8 +2049,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e52ce9292d1bbbf42ab6903c9b56e105, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.487
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3983,10 +3986,20 @@ PrefabInstance:
       propertyPath: fireDelay
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1248279178820552054, guid: 4f7b7777c69231c4ca6ddeab77a26b19,
+        type: 3}
+      propertyPath: nextFire
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1248279178660173583, guid: 4f7b7777c69231c4ca6ddeab77a26b19,
         type: 3}
       propertyPath: fireDelay
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1248279178660173583, guid: 4f7b7777c69231c4ca6ddeab77a26b19,
+        type: 3}
+      propertyPath: nextFire
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1248279179931214041, guid: 4f7b7777c69231c4ca6ddeab77a26b19,
         type: 3}

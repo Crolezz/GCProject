@@ -99,6 +99,8 @@ public class MenuControl : MonoBehaviour
             Destroy(B.GetRidOfIt[i]);
         }
 
+        EndlessMode.thisMode = false;
+        DDToggleTutorial.tutorialOn = false;
     }
   
 }

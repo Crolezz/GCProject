@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadLevel1 : MonoBehaviour
+public class Creditsbtn : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,14 +17,12 @@ public class LoadLevel1 : MonoBehaviour
         
     }
 
-    public void LoadLevel()
+    public void Credits()
     {
-        SceneManager.LoadScene("LEVEL1");
-    }
+   
+        SceneManager.LoadScene("Credits");
 
 
-    public void QuitApp()
-    {
-        Application.Quit();
+
     }
 }
