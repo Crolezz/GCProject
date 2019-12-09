@@ -23,7 +23,7 @@ public class SubstractLives : MonoBehaviour
         {
             Lives = 5;
         }
-        else
+        else if (EndlessMode.thisMode == false)
         {
             Lives = 3;
         }
