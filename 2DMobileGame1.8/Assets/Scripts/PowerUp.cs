@@ -30,7 +30,7 @@ public class PowerUp : MonoBehaviour
             if (HitTest.collider.GetComponent<Rigidbody2D>() != null && HitTest.collider.CompareTag("SlowTime"))
             {
                 Time.timeScale = 0.5f;
-                StartCoroutine(AfterTime(3.0f));
+                StartCoroutine(AfterTime(2.0f));
                 gameObject.GetComponent<Renderer>().enabled = false;
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
             }
