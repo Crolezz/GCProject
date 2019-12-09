@@ -1095,7 +1095,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   grayImage: {fileID: 1249604099}
-  fireDelay: 2.5
+  fireDelay: 3
   nextFire: 3
   fireVelocity: 1
   ObjectThrow: {fileID: 0}
@@ -1387,8 +1387,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   grayImage: {fileID: 1249604099}
-  fireDelay: 2.5
+  fireDelay: 2
   nextFire: 3
   fireVelocity: 1
   ObjectThrow: {fileID: 0}
