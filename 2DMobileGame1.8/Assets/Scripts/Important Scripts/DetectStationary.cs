@@ -7,14 +7,24 @@ public class DetectStationary : MonoBehaviour
     private float timeToStationary = 0.75f;
     public bool isStationary = false;
     public bool betweenStationary = false;
-
+    private bool playThis = false;
     private bool checkStationary = false;
+
+
+    public AudioSource ObjectDrop;
 
     void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.tag == "Platform" || other.gameObject.tag == "Stackables")
         {
             betweenStationary = true;
+            //Play sound when objects collide with each other or platform
+            if (playThis == false)
+            {
+                playThis = true;
+                ObjectDrop.Play();
+            }
+            
             //timeToStationary -= Time.deltaTime;
 
             foreach (ContactPoint2D contact in other.contacts)
