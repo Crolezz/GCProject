@@ -8,7 +8,7 @@ public class BoxLauncher : MonoBehaviour
     public GameObject grayImage;
 
     public float fireDelay = 6f;
-    public static float nextFire = 3f;
+    public float nextFire = 3f;
 
     private float startGameTimer = 0f;
     public static float nextStartGameTimer = 14f;  //set the seconds that you want to wait before the game starts (only works when the game first starts)
@@ -29,9 +29,9 @@ public class BoxLauncher : MonoBehaviour
 
     void Update()
     {
-        if (ScoreScript.CurrentLevel == 3 && ScoreScript.scoreAmount >= 10)
+        if (ScoreScript.CurrentLevel == 3)
         {
-            fireDelay = 4.5f; //Divide it by 2 for seconds
+            fireDelay = 4; //Divide it by 2 for seconds
         }
 
         nextStartGameTimer -= Time.deltaTime;

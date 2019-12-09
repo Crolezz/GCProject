@@ -27,12 +27,16 @@ public class ScoreScript : MonoBehaviour
 
     public GameObject GoodTextEffect;
 
+    BoxLauncher newNextFire;
+
      void Start()
     {
         CameraModify.GetComponent<Camera>();
         scoreText = GetComponent<Text>();
         LevelOverText = LevelOver.GetComponent<Text>();
         CurrentLevelText = CurrentLevelTextObject.GetComponent<Text>();
+
+        newNextFire = GetComponent<BoxLauncher>();
 
         scoreAmount = 0;
         CurrentLevel = 1;
@@ -127,11 +131,12 @@ public class ScoreScript : MonoBehaviour
         CurrentLevel++;
         SubstractLives.Lives = 3;
         SubstractLives.waitFall = 6f;
-        BoxLauncher.nextFire = 3f;
         D.targetY = -0.2f;
         
 
         CameraModify.orthographicSize = 3;
         CameraModify.transform.position = new Vector3(0, -1.11f, -10);
+
+        newNextFire.nextFire = 3f;
     }
 }
