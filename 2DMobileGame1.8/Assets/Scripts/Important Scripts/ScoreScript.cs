@@ -87,7 +87,7 @@ public class ScoreScript : MonoBehaviour
                     LevelOverText.text = "You have finished Level " + CurrentLevel;
                     NextLevelButton.SetActive(true);
                 }
-            }
+            } 
         }
         else if (EndlessMode.thisMode == true)
         {
