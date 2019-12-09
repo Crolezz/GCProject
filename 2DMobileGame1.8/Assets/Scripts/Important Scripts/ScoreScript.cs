@@ -129,7 +129,7 @@ public class ScoreScript : MonoBehaviour
         SubstractLives.waitFall = 6f;
         BoxLauncher.nextFire = 3f;
         D.targetY = -0.2f;
-        
+        Time.timeScale = 1.0f;
 
         CameraModify.orthographicSize = 3;
         CameraModify.transform.position = new Vector3(0, -1.11f, -10);
