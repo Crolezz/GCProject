@@ -15,6 +15,9 @@ public class box1TNTController : MonoBehaviour
     public float b = 0;
     private float activateEffector = 0.10f; //explosion happens for 0.10 seconds
 
+    public GameObject explosion;
+    public bool canExplode = false;
+
     void Start()
     {
         exploText = gameObject.GetComponentInChildren<Text>();
@@ -55,12 +58,17 @@ public class box1TNTController : MonoBehaviour
                 PointE.forceVariation = 0f;
                 PointE.distanceScale = 0f;
 
+                if (canExplode == false)
+                {
+                    Instantiate(explosion, transform.position, Quaternion.identity);
+                    canExplode = true;
+                }
 
                 SubstractLives.Lives -= 1;
                 Destroy(gameObject);
             }
-            
         }
+
         if (s.isStationary == true)
         {
             Destroy(exploText);

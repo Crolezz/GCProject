@@ -351,6 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStationary: 0
   betweenStationary: 0
+  ObjectDrop: {fileID: 0}
 --- !u!114 &5837122216581650109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +369,7 @@ MonoBehaviour:
   PointE: {fileID: 0}
   a: 0
   b: 0
+  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
 --- !u!250 &8506879426562884835
 PointEffector2D:
   m_ObjectHideFlags: 0

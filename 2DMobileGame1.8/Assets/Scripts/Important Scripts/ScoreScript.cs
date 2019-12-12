@@ -27,7 +27,6 @@ public class ScoreScript : MonoBehaviour
 
     public GameObject GoodTextEffect;
 
-    public BoxLauncher newNextFire;
 
      void Start()
     {
@@ -35,8 +34,6 @@ public class ScoreScript : MonoBehaviour
         scoreText = GetComponent<Text>();
         LevelOverText = LevelOver.GetComponent<Text>();
         CurrentLevelText = CurrentLevelTextObject.GetComponent<Text>();
-
-        newNextFire = GetComponent<BoxLauncher>();
 
         scoreAmount = 0;
         CurrentLevel = 1;
@@ -118,6 +115,12 @@ public class ScoreScript : MonoBehaviour
         GameObject C = GameObject.Find("Main Camera");
         CameraMover D = C.GetComponent<CameraMover>();
 
+        GameObject theNextFire = GameObject.Find("BoxLauncher");
+        BoxLauncher theScript = theNextFire.GetComponent<BoxLauncher>();
+
+        GameObject theOtherNextFire = GameObject.Find("BoxLauncher (L)");
+        BoxLauncher theOtherScipt = theOtherNextFire.GetComponent<BoxLauncher>();
+
         SceneManager.LoadScene(nextSceneToLoad);
 
         SubstractLives.GameIsOver = false;
@@ -133,10 +136,11 @@ public class ScoreScript : MonoBehaviour
         SubstractLives.waitFall = 6f;
         D.targetY = -0.2f;
         Time.timeScale = 1.0f;
-
+        theScript.nextFire = 3f;
+        theOtherScipt.nextFire = 6f;
         CameraModify.orthographicSize = 3.4f;
         CameraModify.transform.position = new Vector3(0, -1.11f, -10);
 
-        newNextFire.nextFire = 3f;
+       
     }
 }
