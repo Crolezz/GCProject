@@ -31,7 +31,7 @@ public class BoxLauncher : MonoBehaviour
     {
         if (ScoreScript.CurrentLevel == 3)
         {
-            fireDelay = 4; //Divide it by 2 for seconds
+            fireDelay = 5; //Divide it by 2 for seconds
         }
 
         nextStartGameTimer -= Time.deltaTime;
@@ -49,7 +49,10 @@ public class BoxLauncher : MonoBehaviour
     }
     void FixedUpdate()
     {
-        nextFire -= Time.deltaTime;
+        if (canStartGame == true)
+        {
+            nextFire -= Time.deltaTime;
+        }
 
         //if the game is over, no more objects will be fired
         //if canStartGame is true then the game starts launching boxes

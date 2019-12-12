@@ -1094,6 +1094,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   grayImage: {fileID: 1249604099}
   fireDelay: 3
   nextFire: 3
@@ -1383,6 +1385,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxPrefabs:
   - {fileID: 6664891755355755610, guid: 55cf6586708f68849a547d54a43c27fc, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
