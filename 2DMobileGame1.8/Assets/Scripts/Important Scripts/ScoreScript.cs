@@ -134,7 +134,7 @@ public class ScoreScript : MonoBehaviour
         D.targetY = -0.2f;
         Time.timeScale = 1.0f;
 
-        CameraModify.orthographicSize = 3;
+        CameraModify.orthographicSize = 3.4f;
         CameraModify.transform.position = new Vector3(0, -1.11f, -10);
 
         newNextFire.nextFire = 3f;

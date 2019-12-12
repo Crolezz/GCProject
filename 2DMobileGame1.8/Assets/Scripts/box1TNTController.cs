@@ -47,6 +47,7 @@ public class box1TNTController : MonoBehaviour
             PointE.distanceScale = 1f;
 
             activateEffector -= Time.deltaTime;
+            
 
             if (activateEffector <= 0)
             {
@@ -54,6 +55,8 @@ public class box1TNTController : MonoBehaviour
                 PointE.forceVariation = 0f;
                 PointE.distanceScale = 0f;
 
+
+                SubstractLives.Lives -= 1;
                 Destroy(gameObject);
             }
             
