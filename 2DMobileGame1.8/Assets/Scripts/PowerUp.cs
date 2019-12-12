@@ -33,6 +33,7 @@ public class PowerUp : MonoBehaviour
                 StartCoroutine(AfterTime(2.0f));
                 gameObject.GetComponent<Renderer>().enabled = false;
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                
             }
 
         }

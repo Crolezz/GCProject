@@ -21,6 +21,8 @@ public class MouseManager : MonoBehaviour
     {    //this makes it so that you can't
          //grab any object when the game is over
 
+        //Mouse controls 1/3
+        /*
         if (Input.GetMouseButtonDown(0) && SubstractLives.GameIsOver == false)
         {
             //Clicked
@@ -45,10 +47,10 @@ public class MouseManager : MonoBehaviour
             grabbedObject = null;
             dragLine.enabled = false;
         }
+        */
 
-
-        //Touch controls
-        /* 
+        //Touch controls 1/3
+        
          if (Input.touchCount > 0 && Input.GetTouch(0).phase == touchPhaseB)
         {
             touchPosWorld = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
@@ -99,11 +101,13 @@ public class MouseManager : MonoBehaviour
 
         }
          
-        */
+        
 
     }
     void FixedUpdate()
     {
+        //Mouse controls 2/3
+        /*
         if (grabbedObject != null)
         {
             // Move the object with the mouse
@@ -116,9 +120,10 @@ public class MouseManager : MonoBehaviour
 
             grabbedObject.velocity = dir;
         }
+        */
 
-        // Touch controls
-        /* 
+        // Touch controls 2/3
+        
         if (grabbedObject != null)
         {
             // Move the object with touch
@@ -132,12 +137,14 @@ public class MouseManager : MonoBehaviour
             grabbedObject.velocity = dir;
         }
         
-        */
+        
 
 
     }
     void LateUpdate()
     {
+        //Mouse controls 3/3
+        /*
         if (grabbedObject != null)
         {
             Vector3 MouseWorldPos3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -145,8 +152,9 @@ public class MouseManager : MonoBehaviour
             dragLine.SetPosition(0, new Vector3(grabbedObject.position.x, grabbedObject.position.y, -1));
             dragLine.SetPosition(1, new Vector3(MousePos2D.x, MousePos2D.y, -1));
         }
-        //Touch controls
-        /*        
+        */
+        //Touch controls 3/3
+                
         if (grabbedObject != null)
         {
             touchPosWorld = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
@@ -154,7 +162,7 @@ public class MouseManager : MonoBehaviour
             dragLine.SetPosition(0, new Vector3(grabbedObject.position.x, grabbedObject.position.y, -1));
             dragLine.SetPosition(1, new Vector3(touchPosWorld2D.x, touchPosWorld2D.y, -1));
         }
-        */
+        
 
 
     }
